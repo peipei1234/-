@@ -77,11 +77,21 @@
 
                     console.log(backDate)
                     // nickname:username,
-
+                    // 左侧栏更新
+                    // 头像
                     $('.user_info>img').attr('src', backDate.data.userPic);
-                    $('.user_info>span').html()
-
+                    // 昵称
+                    $('.user_info>span').html(`欢迎  ` + backDate.data.nickname)
+                    // 右侧栏更新
+                    $('.user_center_link>img').attr('src', backDate.data.userPic);
+                },
+                error: function (backDate) {
+                    if (backDate.statusText == 'Forbidden') {
+                        alert('请登录')
+                        window.location.href = './login.html';
+                    }
                 }
+
             })
 
         })
