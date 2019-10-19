@@ -67,7 +67,22 @@
             $('.level01').click(function () {
                 $(this).addClass('active').siblings('.level01').removeClass('active');
             })
+            // 调用获取用户信息接口
+            $.ajax({
+                url: 'http://localhost:8080/api/v1/admin/user/info',
+                headers: {
+                    Authorization: window.localStorage.getItem('token')
+                },
+                success: function (backDate) {
 
+                    console.log(backDate)
+                    // nickname:username,
+
+                    $('.user_info>img').attr('src', backDate.data.userPic);
+                    $('.user_info>span').attr()
+
+                }
+            })
 
         })
     </script>
