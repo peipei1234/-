@@ -63,6 +63,12 @@
             $('.level01:eq(1)').click(function () {
                 $(this).next('.level02').slideToggle();
             })
+            // 点击高亮效果
+            $('.level01').click(function () {
+                $(this).addClass('active').siblings('.level01').removeClass('active');
+            })
+
+
         })
     </script>
 </body>
