@@ -85,6 +85,7 @@
                     // 右侧栏更新
                     $('.user_center_link>img').attr('src', backDate.data.userPic);
                 },
+                // 访问权限
                 error: function (backDate) {
                     if (backDate.statusText == 'Forbidden') {
                         alert('请登录')
