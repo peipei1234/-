@@ -66,6 +66,8 @@
 
           }
           else if (backDate.code === 200) {
+            // 保存登录凭证
+            window.localStorage.setItem('backDate.token')
             window.location.href = './index.html'
           }
         }
