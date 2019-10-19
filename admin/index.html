@@ -58,6 +58,7 @@
         </div>
     </div>
     <script>
+        // 入口函数
         $(function () {
             // 二级菜单的展开收起
             $('.level01:eq(1)').click(function () {
@@ -94,6 +95,26 @@
                 // }
 
             })
+            // 实现退出功能
+            $('.logout').click(function () {
+                // 删除存储的token
+                localStorage.removeItem('token');
+                // 跳转到登录页面
+                location.href = './login.html';
+            })
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         })
     </script>
