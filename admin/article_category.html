@@ -142,7 +142,29 @@
 
             })
 
-
+            // 点击删除
+            // tr是动态创建的 需要用到事件委托
+            // $(".btn-delete").click(function () {
+            $("tbody").on("click", ".btn-delete", function () {
+                // 获取id
+                var id = $(this).attr("data-id")
+                // 调用接口
+                $.ajax({
+                    url: BigNew.category_delete,
+                    type: "post",
+                    data: {
+                        id: id
+                    },
+                    success: function (backData) {
+                        console.log(backData);
+                        // 如果删除成功
+                        // 重新获取数据
+                        if (backData.code === 204) {
+                            getCategoryData();
+                        }
+                    }
+                })
+            })
 
         })
     </script>
