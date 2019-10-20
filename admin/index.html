@@ -66,10 +66,13 @@
             })
             // 点击高亮效果
             $('.level01').click(function () {
+
+                // 排他思想
                 $(this).addClass('active').siblings('.level01').removeClass('active');
             })
             // 调用获取用户信息接口
             $.ajax({
+                // 基地址加接口地址
                 url: 'http://localhost:8080/api/v1/admin/user/info',
                 // headers: {
                 //     Authorization: window.localStorage.getItem('token')
@@ -87,7 +90,7 @@
                     $('.user_center_link>img').attr('src', backDate.data.userPic);
                 },
                 // 访问权限
-                // error: function (backDate) {
+                // error: function (backDate)   
                 //     if (backDate.statusText == 'Forbidden') {
                 //         alert('请登录')
                 //         window.location.href = './login.html';
@@ -102,6 +105,7 @@
                 // 跳转到登录页面
                 location.href = './login.html';
             })
+
 
 
 
