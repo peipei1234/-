@@ -68,6 +68,35 @@
             </form>
         </div>
     </div>
+
+
+
+    <script>
+        // 用户详情获取
+        $(function () {
+            $.ajax({
+                url: BigNew.user_detail,
+                success: function (backData) {
+                    $('.username').val(backData.data.username);
+                    $('.nickname').val(backData.data.nickname);
+                    $('.email').val(backData.data.email);
+
+                    $('.password').val(backData.data.password);
+                    // 单独设置图片
+
+                    $('.user_pic').attr('src', backData.data.userPic);
+
+                }
+            })
+
+
+
+
+        })
+
+
+
+    </script>
 </body>
 
 </html>
